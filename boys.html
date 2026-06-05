@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boys - Libaas e Rang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #1E4A3A;
+      --gold: #C9A84C;
+      --cream: #F7F0E6;
+      --light-gold: #E8D5A3;
+      --text: #2C2C2C;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: var(--cream);
+      color: var(--text);
+    }
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .announcement-bar {
+      background-color: var(--green);
+      color: var(--light-gold);
+      text-align: center;
+      padding: 8px 20px;
+      font-size: 0.75em;
+      letter-spacing: 0.12em;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background-color: var(--white);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e0d8cc;
+    }
+
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+
+    .logo-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7em;
+      font-weight: 600;
+      color: var(--green);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .logo-tagline {
+      font-size: 0.6em;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--green);
+      font-size: 0.82em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: var(--gold);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background-color: var(--green);
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40px; left: 50%;
+      transform: translateX(-50%);
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -70px; left: 50%;
+      transform: translateX(-50%);
+      width: 460px; height: 460px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.08);
+    }
+
+    .hero-label {
+      font-size: 0.7em;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2em;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      color: rgba(247,240,230,0.75);
+      font-size: 0.9em;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── WHY CHOOSE ── */
+    .why-section {
+      padding: 60px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-label {
+      font-size: 0.68em;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .why-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2em;
+      font-weight: 500;
+      color: var(--green);
+      margin-bottom: 40px;
+    }
+
+    .features-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border: 1px solid #e0d8cc;
+      border-top: 3px solid var(--gold);
+      padding: 30px 24px;
+      width: 220px;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .feature-card .icon {
+      font-size: 1.6em;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: 0.8em;
+      color: #666;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ── DIVIDER ── */
+    .ornament-divider {
+      text-align: center;
+      color: var(--gold);
+      font-size: 1.2em;
+      letter-spacing: 0.5em;
+      padding: 10px 0;
+      opacity: 0.6;
+    }
+
+    /* ── SHOP BY CATEGORY ── */
+    .shop-section {
+      padding: 60px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .shop-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2em;
+      font-weight: 500;
+      color: var(--green);
+      margin-bottom: 40px;
+    }
+
+    .category-grid {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .category-card {
+      width: 260px;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .category-card .img-wrap {
+      width: 100%;
+      height: 300px;
+      background-color: #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .category-card .img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(30,74,58,0.5) 0%, transparent 60%);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .category-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15em;
+      font-weight: 500;
+      color: var(--green);
+      margin-top: 14px;
+      letter-spacing: 0.04em;
+    }
+
+    .category-card .shop-link {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 0.72em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .category-card:hover .shop-link {
+      border-color: var(--gold);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: var(--green);
+      color: rgba(247,240,230,0.65);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.78em;
+      letter-spacing: 0.08em;
+      margin-top: 60px;
+    }
+
+    footer span {
+      color: var(--gold);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      header { padding: 14px 20px; flex-wrap: wrap; gap: 12px; }
+      .hero h1 { font-size: 2.2em; }
+      nav ul { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">Free shipping on orders over Rs. 8,000 &nbsp;✦&nbsp; New Summer Collection Now Available</div>
+
+  <header>
+    <a href="home.html" class="logo-wrap">
+      <span class="logo-main">Libaas e Rang</span>
+      <span class="logo-tagline">Heritage in Every Thread</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="kids.html">Kids</a></li>
+        <li><a href="boys.html" class="active">Boys</a></li>
+        <li><a href="girls.html">Girls</a></li>
+        <li><a href="infants.html">Infants</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="hero-label">Libaas e Rang &mdash; Boys</span>
+    <h1>Boys' Collection</h1>
+    <p>Comfortable, playful, and durable outfits for every little adventurer.</p>
+  </section>
+
+  <section class="why-section">
+    <span class="section-label">Why Choose Us</span>
+    <h2>Crafted for Little Adventures</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">👕</div>
+        <h4>Casual & Formal</h4>
+        <p>Versatile outfits for every occasion, from school to celebrations.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🧵</div>
+        <h4>Quality Materials</h4>
+        <p>Durable fabrics that withstand the energy of active boys.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎨</div>
+        <h4>Trendy Designs</h4>
+        <p>Bright colors and modern styles kids actually want to wear.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament-divider">— ✦ —</div>
+
+  <section class="shop-section">
+    <span class="section-label">Browse</span>
+    <h2>Shop by Category</h2>
+    <div class="category-grid">
+      <a href="https://abbasimishi.company.site/products/boys" class="category-card" target="_blank">
+        <div class="img-wrap">
+          <img src="images/boys.jpg" alt="Boys Collection" onerror="this.parentElement.style.background='#c8d8d0'">
+        </div>
+        <h4>Boys Collection</h4>
+        <span class="shop-link">Shop Now →</span>
+      </a>
+      <a href="https://abbasimishi.company.site/products/boys-casual" class="category-card" target="_blank">
+        <div class="img-wrap">
+          <img src="images/boys-casual.jpg" alt="Casual Wear" onerror="this.parentElement.style.background='#d4c9b0'">
+        </div>
+        <h4>Casual Wear</h4>
+        <span class="shop-link">Shop Now →</span>
+      </a>
+      <a href="https://abbasimishi.company.site/products/boys-formal" class="category-card" target="_blank">
+        <div class="img-wrap">
+          <img src="images/boys-formal.jpg" alt="Formal Wear" onerror="this.parentElement.style.background='#b8c8c0'">
+        </div>
+        <h4>Formal Wear</h4>
+        <span class="shop-link">Shop Now →</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 <span>Libaas e Rang</span>. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

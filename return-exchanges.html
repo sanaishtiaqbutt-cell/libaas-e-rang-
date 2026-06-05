@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Returns & Exchanges - Libaas e Rang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #1E4A3A;
+      --gold: #C9A84C;
+      --cream: #F7F0E6;
+      --light-gold: #E8D5A3;
+      --text: #2C2C2C;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: var(--cream);
+      color: var(--text);
+    }
+
+    .announcement-bar {
+      background-color: var(--green);
+      color: var(--light-gold);
+      text-align: center;
+      padding: 8px 20px;
+      font-size: 0.75em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    header {
+      background-color: var(--white);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e0d8cc;
+    }
+
+    .logo-wrap { display: flex; flex-direction: column; text-decoration: none; }
+
+    .logo-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7em;
+      font-weight: 600;
+      color: var(--green);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .logo-tagline {
+      font-size: 0.6em;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    nav ul { list-style: none; display: flex; gap: 28px; }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--green);
+      font-size: 0.82em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover, nav ul li a.active { color: var(--gold); }
+
+    .hero {
+      background-color: var(--green);
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40px; left: 50%;
+      transform: translateX(-50%);
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.12);
+    }
+
+    .hero-label {
+      font-size: 0.7em;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3em;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: rgba(247,240,230,0.7);
+      font-size: 0.88em;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
+    /* STEPS */
+    .steps-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 30px;
+    }
+
+    .section-label {
+      font-size: 0.68em;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+      display: block;
+      text-align: center;
+    }
+
+    .steps-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2em;
+      color: var(--green);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .steps-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    .step-card {
+      background: var(--white);
+      border: 1px solid #e0d8cc;
+      padding: 28px 22px;
+      width: 220px;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1em;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .step-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1em;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      font-size: 0.8em;
+      color: #666;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* POLICY DETAILS */
+    .policy-wrap {
+      max-width: 780px;
+      margin: 0 auto 60px;
+      padding: 0 30px;
+    }
+
+    .policy-block {
+      background: var(--white);
+      border: 1px solid #e0d8cc;
+      border-left: 4px solid var(--gold);
+      padding: 32px 36px;
+      margin-bottom: 20px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .policy-block h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4em;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .policy-block p {
+      font-size: 0.88em;
+      line-height: 1.8;
+      color: #555;
+      font-weight: 300;
+    }
+
+    .highlight-box {
+      background: rgba(30,74,58,0.05);
+      border: 1px solid rgba(30,74,58,0.15);
+      border-radius: 4px;
+      padding: 20px 28px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .highlight-box p {
+      font-size: 0.85em;
+      color: var(--green);
+      line-height: 1.7;
+    }
+
+    .highlight-box strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3em;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    footer {
+      background-color: var(--green);
+      color: rgba(247,240,230,0.65);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.78em;
+      letter-spacing: 0.08em;
+    }
+
+    footer span { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      header { padding: 14px 20px; flex-wrap: wrap; gap: 12px; }
+      nav ul { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement-bar">Easy 30-day returns &nbsp;✦&nbsp; No questions asked exchange policy</div>
+
+  <header>
+    <a href="home.html" class="logo-wrap">
+      <span class="logo-main">Libaas e Rang</span>
+      <span class="logo-tagline">Heritage in Every Thread</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="return-exchanges.html" class="active">Returns & Exchanges</a></li>
+        <li><a href="track-order.html">Track Order</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="hero-label">Customer Care &mdash; Libaas e Rang</span>
+    <h1>Returns & Exchanges</h1>
+    <p>A smooth, hassle-free process for a worry-free shopping experience.</p>
+  </section>
+
+  <section class="steps-section">
+    <span class="section-label">How It Works</span>
+    <h2>Simple 3-Step Process</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Contact Us</h4>
+        <p>Reach out within 30 days of receiving your order with your order number.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Ship It Back</h4>
+        <p>Pack the item in its original condition and packaging and send it back to us.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Get Refund</h4>
+        <p>Receive your full refund or exchange within 5–7 business days.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="policy-wrap">
+
+    <div class="highlight-box">
+      <p><strong>30-Day Return Window</strong>Not satisfied? Return within 30 days for a full refund or exchange — no stress, no hassle.</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Return Policy</h2>
+      <p>If you are not completely satisfied with your purchase, you may return the product within 30 days of receipt for a full refund or exchange. Items must be in their original condition, unused, and in original packaging with all tags attached.</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Exchange Policy</h2>
+      <p>Want a different size or color? We're happy to exchange your item within 30 days. Simply contact our customer care team and we'll guide you through the process. Exchanges are subject to stock availability.</p>
+    </div>
+
+    <div class="policy-block">
+      <h2>Non-Returnable Items</h2>
+      <p>Customized or stitched items, sale items, and gift cards are not eligible for return or exchange. If you received a defective or incorrect item, please contact us immediately and we'll make it right.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2024 <span>Libaas e Rang</span>. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
