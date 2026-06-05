@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kids Collection - Libaas e Rang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+ --cream:#f5efe6;
+ --cream2:#ede4d6;
+ --green:#1e4d3a;
+ --burgundy:#6b1f2a;
+ --gold:#b8860b;
+ --gold2:#d4a843;
+ --text:#2c1f14;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);}
+header{
+ background:var(--cream);
+ border-bottom:1px solid rgba(184,134,11,.25);
+ position:sticky;top:0;z-index:10;
+}
+.header-inner{
+ max-width:1200px;margin:auto;padding:18px 24px;
+ display:flex;justify-content:space-between;align-items:center;
+}
+.logo{
+ text-decoration:none;color:var(--green);
+ font-family:'Cormorant Garamond',serif;
+ font-size:2rem;font-weight:700;
+}
+nav a{
+ text-decoration:none;color:var(--text);
+ margin-left:20px;font-size:.9rem;
+ text-transform:uppercase;letter-spacing:.08em;
+}
+nav a.active{color:var(--gold);}
+
+.hero{
+ background:linear-gradient(135deg,var(--green),var(--burgundy));
+ color:white;text-align:center;
+ padding:90px 20px;
+}
+.hero h1{
+ font-family:'Cormorant Garamond',serif;
+ font-size:clamp(2.5rem,5vw,4.5rem);
+ margin-bottom:10px;
+}
+.hero p{max-width:650px;margin:auto;opacity:.9}
+
+.section-title{
+ text-align:center;padding:60px 20px 20px;
+}
+.section-title h2{
+ font-family:'Cormorant Garamond',serif;
+ color:var(--green);
+ font-size:2.3rem;
+}
+.section-title span{
+ color:var(--gold);
+ text-transform:uppercase;
+ letter-spacing:.2em;
+ font-size:.75rem;
+}
+
+.categories{
+ max-width:1200px;
+ margin:auto;
+ padding:30px 24px 80px;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+ gap:28px;
+}
+
+.card{
+ background:white;
+ border-radius:12px;
+ overflow:hidden;
+ text-decoration:none;
+ color:inherit;
+ border:1px solid var(--cream2);
+ transition:.3s ease;
+ box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+.card:hover{
+ transform:translateY(-6px);
+ box-shadow:0 16px 32px rgba(0,0,0,.12);
+}
+.card img{
+ width:100%;
+ height:320px;
+ object-fit:cover;
+ display:block;
+}
+.card-content{padding:22px}
+.card h3{
+ font-family:'Cormorant Garamond',serif;
+ color:var(--green);
+ font-size:1.8rem;
+ margin-bottom:8px;
+}
+.card p{
+ color:#6d6258;
+ line-height:1.6;
+ margin-bottom:16px;
+}
+.cta{
+ color:var(--gold);
+ text-transform:uppercase;
+ letter-spacing:.12em;
+ font-size:.8rem;
+ font-weight:600;
+}
+
+footer{
+ background:var(--text);
+ color:#ddd;
+ text-align:center;
+ padding:24px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+<a href="home.html" class="logo">Libaas e Rang</a>
+<nav>
+<a href="home.html">Home</a>
+<a href="kids.html" class="active">Kids</a>
+<a href="boys.html">Boys</a>
+<a href="girls.html">Girls</a>
+<a href="infants.html">Infants</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<h1>Kids Collection</h1>
+<p>Discover comfortable, playful and beautifully crafted outfits designed for every little moment.</p>
+</section>
+
+<div class="section-title">
+<span>Shop by Category</span>
+<h2>Explore Our Collections</h2>
+</div>
+
+<section class="categories">
+
+<a class="card" href="https://abbasimishi.company.site/products/boys">
+<img src="images/boys.jpg" alt="Boys Collection">
+<div class="card-content">
+<h3>Boys</h3>
+<p>Smart casual and festive outfits designed for comfort and confidence.</p>
+<div class="cta">Explore Collection</div>
+</div>
+</a>
+
+<a class="card" href="https://mishal.company.site/products/girls">
+<img src="images/Girls.jpg" alt="Girls Collection">
+<div class="card-content">
+<h3>Girls</h3>
+<p>Elegant styles, vibrant colors and timeless designs for every occasion.</p>
+<div class="cta">Explore Collection</div>
+</div>
+</a>
+
+<a class="card" href="https://store111336519.company.site/products/infants">
+<img src="images/infants.jpg" alt="Infants Collection">
+<div class="card-content">
+<h3>Infants</h3>
+<p>Soft fabrics and gentle essentials crafted with care for newborns.</p>
+<div class="cta">Explore Collection</div>
+</div>
+</a>
+
+</section>
+
+<footer>
+© 2024 Libaas e Rang. All Rights Reserved.
+</footer>
+
+</body>
+</html>
